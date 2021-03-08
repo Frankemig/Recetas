@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:title="Recetas de Cocina"
+        android:id="@+id/menu_cocina"
+        android:icon="@drawable/ic_fondos"/>
+    <item
+        android:title="Coctelería"
+        android:id="@+id/menu_cocteleria"
+        android:icon="@drawable/ic_aperitivos"/>
+    <item
+        android:title="Postres"
+        android:id="@+id/menu_postres"
+        android:icon="@drawable/ic_postres_cafe"/>
+</menu>
