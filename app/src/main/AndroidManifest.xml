@@ -28,7 +28,13 @@
             android:name="com.example.recetas.EditPostres"
             android:theme="@style/Theme.FormActivity" />
         <activity
-            android:name="com.example.recetas.RecetaDetail"
+            android:name="com.example.recetas.DetailCocina"
+            android:theme="@style/Theme.DetailActivity" />
+        <activity
+            android:name="com.example.recetas.DetailCocteleria"
+            android:theme="@style/Theme.DetailActivity" />
+        <activity
+            android:name="com.example.recetas.DetailPostres"
             android:theme="@style/Theme.DetailActivity" />
         <activity
             android:name="com.example.recetas.AddCocina"

@@ -98,7 +98,7 @@ class RecetasCocinaList : Fragment() {
             }
 
             holder.itemView.setOnClickListener { v ->
-                val intent = Intent(v.context, RecetaDetail::class.java).apply {
+                val intent = Intent(v.context, DetailCocina::class.java).apply {
                     putExtra("key", recetas.key)
                 }
                 v.context.startActivity(intent)
