@@ -19,7 +19,7 @@ import com.google.firebase.storage.UploadTask
 import com.squareup.picasso.Picasso
 import com.theartofdev.edmodo.cropper.CropImage
 import com.theartofdev.edmodo.cropper.CropImageView
-import kotlinx.android.synthetic.main.cocteleria_add.*
+import kotlinx.android.synthetic.main.cocina_add.*
 import java.io.ByteArrayOutputStream
 import java.util.*
 
@@ -38,18 +38,18 @@ class AddCocteleria : AppCompatActivity() {
 
         myRef = database.getReference("Cocteleria")
 
-        val name=et_addNameCocteleria.text
-        val description=et_preparacionAddCocteleria.text
+        val name=et_addNameCocina.text
+        val description=et_preparacionAddCocina.text
 
         storageReference = FirebaseStorage.getInstance().reference.child("imagenes")
 
-        urlImageCocteleria.setOnClickListener {
+        urlImage.setOnClickListener {
             CropImage.startPickImageActivity(this)
         }
 
-        saveButtonAddCocteleria.setOnClickListener { v ->
-            val cocteleria = Recetas(name.toString(), "",description.toString(), downloadUri.toString())
-            myRef.child(myRef.push().key.toString()).setValue(cocteleria)
+        saveButtonAddCocina.setOnClickListener { v ->
+            val recetas = Recetas(name.toString(), "",description.toString(), downloadUri.toString())
+            myRef.child(myRef.push().key.toString()).setValue(recetas)
             finish()
         }
     }
@@ -90,7 +90,7 @@ class AddCocteleria : AppCompatActivity() {
                     Toast.makeText(this, "Foto Subida Exitosamente...", Toast.LENGTH_LONG).show()
                 }
 
-                Picasso.get().load(resultUri).into(imageAddCocteleria)
+                Picasso.get().load(resultUri).into(imageAddCocina)
 
             }
         }

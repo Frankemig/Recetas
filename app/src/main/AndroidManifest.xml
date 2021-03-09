@@ -22,10 +22,22 @@
             android:name="com.example.recetas.EditCocina"
             android:theme="@style/Theme.FormActivity" />
         <activity
+            android:name="com.example.recetas.EditCocteleria"
+            android:theme="@style/Theme.FormActivity" />
+        <activity
+            android:name="com.example.recetas.EditPostres"
+            android:theme="@style/Theme.FormActivity" />
+        <activity
             android:name="com.example.recetas.RecetaDetail"
             android:theme="@style/Theme.DetailActivity" />
         <activity
             android:name="com.example.recetas.AddCocina"
+            android:theme="@style/Theme.FormActivity" />
+        <activity
+            android:name="com.example.recetas.AddCocteleria"
+            android:theme="@style/Theme.FormActivity" />
+        <activity
+            android:name="com.example.recetas.AddPostres"
             android:theme="@style/Theme.FormActivity" />
         <activity
             android:name="com.theartofdev.edmodo.cropper.CropImageActivity"

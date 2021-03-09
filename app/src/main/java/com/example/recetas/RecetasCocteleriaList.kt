@@ -41,7 +41,7 @@ class RecetasCocteleriaList : Fragment() {
         binding.textViewReferencia.setText("Recetas de Coctelería")
 
         binding.floatingButton.setOnClickListener { v ->
-            val intent = Intent(context, AddCocina::class.java)
+            val intent = Intent(context, AddCocteleria::class.java)
             v.context.startActivity(intent)
         }
 
@@ -105,7 +105,7 @@ class RecetasCocteleriaList : Fragment() {
             }
 
             holder.itemView.setOnLongClickListener{ v ->
-                val intent = Intent(v.context, EditCocina::class.java).apply {
+                val intent = Intent(v.context, EditCocteleria::class.java).apply {
                     putExtra("key", recetas.key)
                 }
                 v.context.startActivity(intent)
