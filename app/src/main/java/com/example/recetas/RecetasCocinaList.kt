@@ -19,6 +19,8 @@ import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
 import com.google.firebase.database.ktx.getValue
 import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.StorageReference
 import kotlinx.android.synthetic.main.item_list.view.*
 
 class RecetasCocinaList : Fragment() {
@@ -26,8 +28,9 @@ class RecetasCocinaList : Fragment() {
     private lateinit var binding: CocinaListBinding
 
     private val database = Firebase.database
+    private lateinit var storageReference: StorageReference
     private lateinit var messagesListener: ValueEventListener
-    private val listRecetas:MutableList<Recetas> = ArrayList()
+    private val listRecetas: MutableList<Recetas> = ArrayList()
     val myRef = database.getReference("Recetas")
 
     override fun onCreateView(
@@ -35,7 +38,9 @@ class RecetasCocinaList : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-            binding = CocinaListBinding.inflate(inflater)
+        binding = CocinaListBinding.inflate(inflater)
+        storageReference = FirebaseStorage.getInstance().reference.child("imagenes")
+
 
         binding.imageReferencia.setImageResource(R.drawable.ic_fondos)
         binding.textViewReferencia.setText("Recetas de Cocina")
@@ -59,11 +64,13 @@ class RecetasCocinaList : Fragment() {
                 listRecetas.clear()
                 dataSnapshot.children.forEach { child ->
                     val recetas: Recetas? =
-                            Recetas(child.child("name").getValue<String>(),
-                                    child.child("date").getValue<String>(),
-                                    child.child("description").getValue<String>(),
-                                    child.child("url").getValue<String>(),
-                                    child.key)
+                        Recetas(
+                            child.child("name").getValue<String>(),
+                            child.child("date").getValue<String>(),
+                            child.child("description").getValue<String>(),
+                            child.child("url").getValue<String>(),
+                            child.key
+                        )
                     recetas?.let { listRecetas.add(it) }
                 }
                 recyclerView.adapter = RecetasCocinaAdapter(listRecetas)
@@ -104,7 +111,7 @@ class RecetasCocinaList : Fragment() {
                 v.context.startActivity(intent)
             }
 
-            holder.itemView.setOnLongClickListener{ v ->
+            holder.itemView.setOnLongClickListener { v ->
                 val intent = Intent(v.context, EditCocina::class.java).apply {
                     putExtra("key", recetas.key)
                 }
@@ -123,14 +130,24 @@ class RecetasCocinaList : Fragment() {
         }
     }
 
-    private fun deleteSwipe(recyclerView: RecyclerView){
-        val touchHelperCallback: ItemTouchHelper.SimpleCallback = object : ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT or ItemTouchHelper.RIGHT) {
-            override fun onMove(recyclerView: RecyclerView, viewHolder: RecyclerView.ViewHolder, target: RecyclerView.ViewHolder): Boolean {
+    private fun deleteSwipe(recyclerView: RecyclerView) {
+        val touchHelperCallback: ItemTouchHelper.SimpleCallback = object :
+            ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT or ItemTouchHelper.RIGHT) {
+            override fun onMove(
+                recyclerView: RecyclerView,
+                viewHolder: RecyclerView.ViewHolder,
+                target: RecyclerView.ViewHolder
+            ): Boolean {
                 return false
             }
 
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
-                listRecetas.get(viewHolder.adapterPosition).key?.let { myRef.child(it).setValue(null) }
+                listRecetas.get(viewHolder.adapterPosition).key?.let {
+                    myRef.child(it).setValue(null)
+                }
+                    listRecetas.get(viewHolder.adapterPosition).url?.let {
+                        storageReference.child("Cocina").child(it).delete()
+                    }
                 listRecetas.removeAt(viewHolder.adapterPosition)
                 recyclerView.adapter?.notifyItemRemoved(viewHolder.adapterPosition)
                 recyclerView.adapter?.notifyDataSetChanged()
