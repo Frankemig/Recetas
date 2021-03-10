@@ -65,6 +65,8 @@ class RecetasCocteleriaList : Fragment() {
                                     child.child("date").getValue<String>(),
                                     child.child("description").getValue<String>(),
                                     child.child("url").getValue<String>(),
+                                child.child("subidoPor").getValue<String>(),
+                                child.child("pdf").getValue<String>(),
                                     child.key)
                     recetas?.let { listRecetas.add(it) }
                 }
@@ -92,7 +94,7 @@ class RecetasCocteleriaList : Fragment() {
         override fun onBindViewHolder(holder: ViewHolder, position: Int) {
             val recetas = values[position]
             holder.mNameTextView.text = recetas.name
-            holder.mDateTextView.text = recetas.date
+            holder.subidoPor.text = recetas.SubidoPor
             holder.mPosterImgeView?.let {
                 Glide.with(holder.itemView.context)
                     .load(recetas.url)
@@ -119,8 +121,8 @@ class RecetasCocteleriaList : Fragment() {
         override fun getItemCount() = values.size
 
         inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-            val mNameTextView: TextView = view.tv_addNameCocina
-            val mDateTextView: TextView = view.dateTextView
+            val mNameTextView: TextView = view.tv_nameAdd
+            val subidoPor: TextView = view.subidoPor
             val mPosterImgeView: ImageView? = view.posterImgeView
         }
     }

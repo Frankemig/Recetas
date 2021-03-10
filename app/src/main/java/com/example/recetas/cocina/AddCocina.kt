@@ -40,17 +40,17 @@ class AddCocina : AppCompatActivity() {
 
         myRef = database.getReference("Recetas")
 
-        val name=et_addNameCocina.text
-        val description=et_preparacionAddCocina.text
+        val name=et_nameAdd.text
+        val description=et_preparacionAdd.text
 
         storageReference = FirebaseStorage.getInstance().reference.child("imagenes")
 
-        urlImage.setOnClickListener {
+        btn_subirImage.setOnClickListener {
             CropImage.startPickImageActivity(this)
         }
 
-        saveButtonAddCocina.setOnClickListener { v ->
-            val recetas = Recetas(name.toString(), "",description.toString(), downloadUri.toString())
+        btn_saveAdd.setOnClickListener { v ->
+            val recetas = Recetas(name.toString(), "",description.toString(), downloadUri.toString(),"Franklin Jiménez","")
             myRef.child(myRef.push().key.toString()).setValue(recetas)
             finish()
         }
@@ -92,7 +92,7 @@ class AddCocina : AppCompatActivity() {
                     Toast.makeText(this, "Foto Subida Exitosamente...", Toast.LENGTH_LONG).show()
                 }
 
-                Picasso.get().load(resultUri).into(imageAddCocina)
+                Picasso.get().load(resultUri).into(imageAdd)
 
             }
         }

@@ -4,6 +4,5 @@ data class Usuario(
         val Nombre: String = "",
         val Contraseña: String ="",
         val Estatus: String = "",
-        val Mail: String = "",
-        val Registrado_Por: String? = ""
+        val Mail: String = ""
 )

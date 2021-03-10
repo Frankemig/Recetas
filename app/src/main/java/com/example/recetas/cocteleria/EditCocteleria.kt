@@ -43,7 +43,7 @@ class EditCocteleria : AppCompatActivity() {
         val database = Firebase.database
         storageReference = FirebaseStorage.getInstance().reference.child("imagenes")
 
-        @Suppress("NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS") val myRef = database.getReference("Cocteleria").child(key)
+        @Suppress("NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS") val myRef = database.getReference("Cocteleria").child(key!!)
 
         myRef.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
@@ -61,7 +61,7 @@ class EditCocteleria : AppCompatActivity() {
             }
         })
 
-        saveButtonAddCocina.setOnClickListener { v ->
+        btn_saveEdit.setOnClickListener { v ->
 
             val name : String = et_nameEdit.text.toString()
             val description: String = et_preparacionEdit.text.toString()
@@ -74,7 +74,7 @@ class EditCocteleria : AppCompatActivity() {
 
             finish()
         }
-        btn_imagenEdit.setOnClickListener {
+        btn_subirImageEdit.setOnClickListener {
             CropImage.startPickImageActivity(this)
         }
     }
@@ -115,7 +115,7 @@ class EditCocteleria : AppCompatActivity() {
                     Toast.makeText(this, "Foto Subida Exitosamente...", Toast.LENGTH_LONG).show()
                 }
 
-                Picasso.get().load(resultUri).into(ImageEdit)
+                Picasso.get().load(resultUri).into(imageEdit)
 
             }
         }

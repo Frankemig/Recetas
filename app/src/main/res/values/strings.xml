@@ -9,7 +9,7 @@
     <string name="title_activity_edit">Datos de la Receta</string>
     <string name="name_form">Nombre</string>
     <string name="date_form">Fecha</string>
-    <string name="url_form">Url imagen</string>
+    <string name="url_form">Subir Imagen</string>
     <string name="preparacion_form">Descripción</string>
     <string name="save">Guardar</string>
     <string name="description">Final Fantasy es una franquicia de medios creada por Hironobu Sakaguchi y desarrollada por Square Enix. La franquicia se centra en una serie de fantasía y ciencia ficción de videojuegos RPG.</string>
@@ -18,8 +18,9 @@
     <string name="preparacion">Preparación</string>
     <string name="preparacion_receta">Aquí estará descrita la manera en como se preparará el plato en base a la receta rescrita líneas arriba</string>
     <string name="ingresar_ingrediente">Ingresar Aquí 1 Ingrediente</string>
-    <string name="paso_paso_receta">Ingresar aquí, lo más detallado posible, el paso a paso para preparar esta receta</string>
+    <string name="paso_paso_receta">Ingresar aquí una breve descripción de su receta...</string>
     <string name="modificar_datos">Modificar Datos</string>
     <string name="olvide_contrasena">Olvidé mi Contraseña</string>
     <string name="no_registrado">No Estoy Registrado</string>
+    <string name="cancelar_pdf">Cancelar PDF</string>
 </resources>

@@ -27,7 +27,6 @@ import com.theartofdev.edmodo.cropper.CropImage
 import com.theartofdev.edmodo.cropper.CropImageView
 import kotlinx.android.synthetic.main.cocina_add.*
 import kotlinx.android.synthetic.main.cocina_edit.*
-import kotlinx.android.synthetic.main.cocina_edit.saveButtonAddCocina
 import java.io.ByteArrayOutputStream
 import java.util.*
 
@@ -45,7 +44,7 @@ class EditCocina : AppCompatActivity() {
         val database = Firebase.database
         storageReference = FirebaseStorage.getInstance().reference.child("imagenes")
 
-        @Suppress("NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS") val myRef = database.getReference("Recetas").child(key)
+        @Suppress("NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS") val myRef = database.getReference("Recetas").child(key!!)
 
         myRef.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
@@ -63,7 +62,7 @@ class EditCocina : AppCompatActivity() {
             }
         })
 
-        saveButtonAddCocina.setOnClickListener { v ->
+        btn_saveEdit.setOnClickListener { v ->
 
             val name : String = et_nameEdit.text.toString()
             val description: String = et_preparacionEdit.text.toString()
@@ -76,7 +75,7 @@ class EditCocina : AppCompatActivity() {
 
             finish()
         }
-        btn_imagenEdit.setOnClickListener {
+        btn_subirImageEdit.setOnClickListener {
             CropImage.startPickImageActivity(this)
         }
 
@@ -118,7 +117,7 @@ class EditCocina : AppCompatActivity() {
                     Toast.makeText(this, "Foto Subida Exitosamente...", Toast.LENGTH_LONG).show()
                 }
 
-                Picasso.get().load(resultUri).into(ImageEdit)
+                Picasso.get().load(resultUri).into(imageEdit)
 
             }
         }
