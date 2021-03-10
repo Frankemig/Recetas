@@ -1,8 +1,10 @@
-package com.example.recetas
+package com.example.recetas.postres
 
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import com.example.recetas.R
+import com.example.recetas.Recetas
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
@@ -23,7 +25,7 @@ class DetailPostres : AppCompatActivity() {
         myRef.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
 
-                val recetas:Recetas? = dataSnapshot.getValue(Recetas::class.java)
+                val recetas: Recetas? = dataSnapshot.getValue(Recetas::class.java)
                 if (recetas != null) {
                     tv_name_receta_full.text = recetas.name.toString()
                     descriptionPreparacion.text = recetas.description.toString()

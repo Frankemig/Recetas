@@ -4,7 +4,10 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
+import com.example.recetas.cocina.RecetasCocinaList
+import com.example.recetas.cocteleria.RecetasCocteleriaList
 import com.example.recetas.databinding.ActivityMainBinding
+import com.example.recetas.postres.RecetasPostresList
 
 class MainActivity : AppCompatActivity() {
 

@@ -1,4 +1,4 @@
-package com.example.recetas
+package com.example.recetas.cocina
 
 import android.app.Activity
 import android.content.Intent
@@ -7,6 +7,8 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import com.example.recetas.R
+import com.example.recetas.Recetas
 import com.google.android.gms.tasks.Continuation
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.android.gms.tasks.Task

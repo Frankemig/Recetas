@@ -1,4 +1,4 @@
-package com.example.recetas
+package com.example.recetas.cocina
 
 import android.app.Activity
 import android.content.Intent
@@ -9,6 +9,8 @@ import android.os.Bundle
 import android.text.Editable
 import android.util.Log
 import android.widget.Toast
+import com.example.recetas.R
+import com.example.recetas.Recetas
 import com.google.android.gms.tasks.Continuation
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.android.gms.tasks.Task
@@ -23,11 +25,13 @@ import com.google.firebase.storage.UploadTask
 import com.squareup.picasso.Picasso
 import com.theartofdev.edmodo.cropper.CropImage
 import com.theartofdev.edmodo.cropper.CropImageView
+import kotlinx.android.synthetic.main.cocina_add.*
 import kotlinx.android.synthetic.main.cocina_edit.*
+import kotlinx.android.synthetic.main.cocina_edit.saveButtonAddCocina
 import java.io.ByteArrayOutputStream
 import java.util.*
 
-class EditCocteleria : AppCompatActivity() {
+class EditCocina : AppCompatActivity() {
 
     private lateinit var storageReference: StorageReference
     var thumb_bitmap: Bitmap? = null
@@ -41,12 +45,12 @@ class EditCocteleria : AppCompatActivity() {
         val database = Firebase.database
         storageReference = FirebaseStorage.getInstance().reference.child("imagenes")
 
-        @Suppress("NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS") val myRef = database.getReference("Cocteleria").child(key)
+        @Suppress("NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS") val myRef = database.getReference("Recetas").child(key)
 
         myRef.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
 
-                val recetas:Recetas? = dataSnapshot.getValue(Recetas::class.java)
+                val recetas: Recetas? = dataSnapshot.getValue(Recetas::class.java)
                 if (recetas != null) {
                     et_nameEdit.text = Editable.Factory.getInstance().newEditable(recetas.name)
                     et_preparacionEdit.text = Editable.Factory.getInstance().newEditable(recetas.description)
@@ -75,6 +79,7 @@ class EditCocteleria : AppCompatActivity() {
         btn_imagenEdit.setOnClickListener {
             CropImage.startPickImageActivity(this)
         }
+
     }
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
@@ -97,7 +102,7 @@ class EditCocteleria : AppCompatActivity() {
                 val thum_byte = byteArrayOutputStream.toByteArray()
 
                 val filePath: StorageReference =
-                    storageReference.child("Cocteleria").child(resultUri.lastPathSegment!!)
+                    storageReference.child("Cocina").child(resultUri.lastPathSegment!!)
                 val uploadTask: UploadTask = filePath.putBytes(thum_byte)
                 val uriTask: Task<Uri> =
                     uploadTask.continueWithTask(Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
@@ -118,5 +123,6 @@ class EditCocteleria : AppCompatActivity() {
             }
         }
     }
+
 
 }

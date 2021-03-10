@@ -1,4 +1,4 @@
-package com.example.recetas
+package com.example.recetas.cocteleria
 
 import android.app.Activity
 import android.content.Intent
@@ -6,11 +6,17 @@ import android.graphics.Bitmap
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
+import android.util.Log
 import android.widget.Toast
+import com.example.recetas.R
+import com.example.recetas.Recetas
 import com.google.android.gms.tasks.Continuation
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.android.gms.tasks.Task
-import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
@@ -19,38 +25,57 @@ import com.google.firebase.storage.UploadTask
 import com.squareup.picasso.Picasso
 import com.theartofdev.edmodo.cropper.CropImage
 import com.theartofdev.edmodo.cropper.CropImageView
-import kotlinx.android.synthetic.main.cocina_add.*
+import kotlinx.android.synthetic.main.cocina_edit.*
 import java.io.ByteArrayOutputStream
 import java.util.*
 
-class AddPostres : AppCompatActivity() {
+class EditCocteleria : AppCompatActivity() {
 
-    private lateinit var myRef: DatabaseReference
-    private lateinit var downloadUri: Uri
-
-    private val database = Firebase.database
     private lateinit var storageReference: StorageReference
     var thumb_bitmap: Bitmap? = null
+    private lateinit var downloadUri: Uri
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.cocina_add)
+        setContentView(R.layout.cocina_edit)
 
-        myRef = database.getReference("Postres")
-
-        val name=et_addNameCocina.text
-        val description=et_preparacionAddCocina.text
-
+        val key = intent.getStringExtra("key")
+        val database = Firebase.database
         storageReference = FirebaseStorage.getInstance().reference.child("imagenes")
 
-        urlImage.setOnClickListener {
-            CropImage.startPickImageActivity(this)
-        }
+        @Suppress("NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS") val myRef = database.getReference("Cocteleria").child(key)
+
+        myRef.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+
+                val recetas: Recetas? = dataSnapshot.getValue(Recetas::class.java)
+                if (recetas != null) {
+                    et_nameEdit.text = Editable.Factory.getInstance().newEditable(recetas.name)
+                    et_preparacionEdit.text = Editable.Factory.getInstance().newEditable(recetas.description)
+                }
+
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                Log.w("TAG", "Failed to read value.", error.toException())
+            }
+        })
 
         saveButtonAddCocina.setOnClickListener { v ->
-            val recetas = Recetas(name.toString(), "",description.toString(), downloadUri.toString())
-            myRef.child(myRef.push().key.toString()).setValue(recetas)
+
+            val name : String = et_nameEdit.text.toString()
+            val description: String = et_preparacionEdit.text.toString()
+            val url : String = downloadUri.toString()
+
+            myRef.child("name").setValue(name)
+            //myRef.child("date").setValue(date)
+            myRef.child("description").setValue(description)
+            myRef.child("url").setValue(url)
+
             finish()
+        }
+        btn_imagenEdit.setOnClickListener {
+            CropImage.startPickImageActivity(this)
         }
     }
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -74,7 +99,7 @@ class AddPostres : AppCompatActivity() {
                 val thum_byte = byteArrayOutputStream.toByteArray()
 
                 val filePath: StorageReference =
-                    storageReference.child("Postres").child(resultUri.lastPathSegment!!)
+                    storageReference.child("Cocteleria").child(resultUri.lastPathSegment!!)
                 val uploadTask: UploadTask = filePath.putBytes(thum_byte)
                 val uriTask: Task<Uri> =
                     uploadTask.continueWithTask(Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
@@ -90,9 +115,10 @@ class AddPostres : AppCompatActivity() {
                     Toast.makeText(this, "Foto Subida Exitosamente...", Toast.LENGTH_LONG).show()
                 }
 
-                Picasso.get().load(resultUri).into(imageAddCocina)
+                Picasso.get().load(resultUri).into(ImageEdit)
 
             }
         }
     }
+
 }

@@ -19,31 +19,31 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.recetas.EditCocina"
+            android:name="com.example.recetas.cocina.EditCocina"
             android:theme="@style/Theme.FormActivity" />
         <activity
-            android:name="com.example.recetas.EditCocteleria"
+            android:name="com.example.recetas.cocteleria.EditCocteleria"
             android:theme="@style/Theme.FormActivity" />
         <activity
-            android:name="com.example.recetas.EditPostres"
+            android:name="com.example.recetas.postres.EditPostres"
             android:theme="@style/Theme.FormActivity" />
         <activity
-            android:name="com.example.recetas.DetailCocina"
+            android:name="com.example.recetas.cocina.DetailCocina"
             android:theme="@style/Theme.DetailActivity" />
         <activity
-            android:name="com.example.recetas.DetailCocteleria"
+            android:name="com.example.recetas.cocteleria.DetailCocteleria"
             android:theme="@style/Theme.DetailActivity" />
         <activity
-            android:name="com.example.recetas.DetailPostres"
+            android:name="com.example.recetas.postres.DetailPostres"
             android:theme="@style/Theme.DetailActivity" />
         <activity
-            android:name="com.example.recetas.AddCocina"
+            android:name="com.example.recetas.cocina.AddCocina"
             android:theme="@style/Theme.FormActivity" />
         <activity
-            android:name="com.example.recetas.AddCocteleria"
+            android:name="com.example.recetas.cocteleria.AddCocteleria"
             android:theme="@style/Theme.FormActivity" />
         <activity
-            android:name="com.example.recetas.AddPostres"
+            android:name="com.example.recetas.postres.AddPostres"
             android:theme="@style/Theme.FormActivity" />
         <activity
             android:name="com.theartofdev.edmodo.cropper.CropImageActivity"

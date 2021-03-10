@@ -6,6 +6,6 @@
     app:startDestination="@+id/navigation_home">
     <fragment
         android:id="@+id/recetasCocteleriaList"
-        android:name="com.example.recetas.RecetasCocteleriaList"
+        android:name="com.example.recetas.cocteleria.RecetasCocteleriaList"
         android:label="RecetasCocteleriaList" />
 </navigation>

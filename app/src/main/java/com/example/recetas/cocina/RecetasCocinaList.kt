@@ -1,4 +1,4 @@
-package com.example.recetas
+package com.example.recetas.cocina
 
 import android.content.Intent
 import android.os.Bundle
@@ -12,6 +12,8 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.recetas.R
+import com.example.recetas.Recetas
 import com.example.recetas.databinding.CocinaListBinding
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError

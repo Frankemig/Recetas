@@ -20,4 +20,6 @@
     <string name="ingresar_ingrediente">Ingresar Aquí 1 Ingrediente</string>
     <string name="paso_paso_receta">Ingresar aquí, lo más detallado posible, el paso a paso para preparar esta receta</string>
     <string name="modificar_datos">Modificar Datos</string>
+    <string name="olvide_contrasena">Olvidé mi Contraseña</string>
+    <string name="no_registrado">No Estoy Registrado</string>
 </resources>

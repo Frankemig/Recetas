@@ -3,11 +3,30 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/recetasCocinaList">
+    app:startDestination="@id/pantallaInicial">
 
     <fragment
         android:id="@+id/recetasCocinaList"
-        android:name="com.example.recetas.RecetasCocinaList"
+        android:name="com.example.recetas.cocina.RecetasCocinaList"
         android:label="cocina_list"
         tools:layout="@layout/cocina_list" />
+    <fragment
+        android:id="@+id/pantallaInicial"
+        android:name="com.example.recetas.PantallaInicial"
+        android:label="PantallaInicial" >
+        <action
+            android:id="@+id/action_pantallaInicial_to_registrarse"
+            app:destination="@id/registrarse" />
+        <action
+            android:id="@+id/action_pantallaInicial_to_recetasCocinaList"
+            app:destination="@id/recetasCocinaList" />
+    </fragment>
+    <fragment
+        android:id="@+id/registrarse"
+        android:name="com.example.recetas.Registrarse"
+        android:label="Registrarse" >
+        <action
+            android:id="@+id/action_registrarse_to_pantallaInicial"
+            app:destination="@id/pantallaInicial" />
+    </fragment>
 </navigation>

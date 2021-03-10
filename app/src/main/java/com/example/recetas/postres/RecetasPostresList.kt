@@ -1,4 +1,4 @@
-package com.example.recetas
+package com.example.recetas.postres
 
 import android.content.Intent
 import android.os.Bundle
@@ -12,6 +12,8 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.recetas.R
+import com.example.recetas.Recetas
 import com.example.recetas.databinding.CocinaListBinding
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -21,14 +23,14 @@ import com.google.firebase.database.ktx.getValue
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.item_list.view.*
 
-class RecetasCocteleriaList : Fragment() {
+class RecetasPostresList : Fragment() {
 
     private lateinit var binding: CocinaListBinding
 
     private val database = Firebase.database
     private lateinit var messagesListener: ValueEventListener
     private val listRecetas:MutableList<Recetas> = ArrayList()
-    val myRef = database.getReference("Cocteleria")
+    val myRef = database.getReference("Postres")
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -37,11 +39,11 @@ class RecetasCocteleriaList : Fragment() {
     ): View? {
             binding = CocinaListBinding.inflate(inflater)
 
-        binding.imageReferencia.setImageResource(R.drawable.ic_aperitivos)
-        binding.textViewReferencia.setText("Recetas de Coctelería")
+        binding.imageReferencia.setImageResource(R.drawable.ic_postres_cafe)
+        binding.textViewReferencia.setText("Recetas de Respostería")
 
         binding.floatingButton.setOnClickListener { v ->
-            val intent = Intent(context, AddCocteleria::class.java)
+            val intent = Intent(context, AddPostres::class.java)
             v.context.startActivity(intent)
         }
 
@@ -66,7 +68,7 @@ class RecetasCocteleriaList : Fragment() {
                                     child.key)
                     recetas?.let { listRecetas.add(it) }
                 }
-                recyclerView.adapter = RecetasCocteleriaAdapter(listRecetas)
+                recyclerView.adapter = RecetasReposteriaAdapter(listRecetas)
             }
 
             override fun onCancelled(error: DatabaseError) {
@@ -78,8 +80,8 @@ class RecetasCocteleriaList : Fragment() {
         deleteSwipe(recyclerView)
     }
 
-    class RecetasCocteleriaAdapter(private val values: List<Recetas>) :
-        RecyclerView.Adapter<RecetasCocteleriaAdapter.ViewHolder>() {
+    class RecetasReposteriaAdapter(private val values: List<Recetas>) :
+        RecyclerView.Adapter<RecetasReposteriaAdapter.ViewHolder>() {
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
             val view = LayoutInflater.from(parent.context)
@@ -98,14 +100,14 @@ class RecetasCocteleriaList : Fragment() {
             }
 
             holder.itemView.setOnClickListener { v ->
-                val intent = Intent(v.context, DetailCocteleria::class.java).apply {
+                val intent = Intent(v.context, DetailPostres::class.java).apply {
                     putExtra("key", recetas.key)
                 }
                 v.context.startActivity(intent)
             }
 
             holder.itemView.setOnLongClickListener{ v ->
-                val intent = Intent(v.context, EditCocteleria::class.java).apply {
+                val intent = Intent(v.context, EditPostres::class.java).apply {
                     putExtra("key", recetas.key)
                 }
                 v.context.startActivity(intent)
