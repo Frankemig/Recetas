@@ -13,7 +13,7 @@
         app:layout_constraintBottom_toTopOf="@+id/btnIngreso"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2">
+        app:layout_constraintTop_toBottomOf="@+id/logo_fucap">
 
         <com.rengwuxian.materialedittext.MaterialEditText
             android:id="@+id/edtTelefono_ingresar"
@@ -76,7 +76,7 @@
         tools:ignore="RtlCompat" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/logo_fucap"
         android:layout_width="300dp"
         android:layout_height="220dp"
         android:src="@drawable/logo_fucap"

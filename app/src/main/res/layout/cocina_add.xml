@@ -99,38 +99,60 @@ tools:context=".cocina.AddCocina">
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/et_nameAdd">
 
-                <ImageView
-                    android:id="@+id/imagePDF"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentLeft="true"
-                    android:layout_margin="10dp"
-                    android:src="@drawable/bucar_pdf"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/btn_cancelarPDF"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
                 <Button
-                    android:id="@+id/btn_cancelarPDF"
-                    android:layout_width="150dp"
+                    android:id="@+id/btn_cargarArchivo"
+                    android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_margin="10dp"
                     android:background="@drawable/ic_btn2"
                     android:gravity="center"
-                    android:text="@string/cancelar_pdf"
+                    android:text="@string/cargar_archivo"
                     android:textColor="@color/white"
                     android:textSize="16sp"
                     android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:layout_marginEnd="20dp"
+                    android:id="@+id/imageView4"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_margin="10dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/word_no"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toBottomOf="@+id/btn_cargarArchivo" />
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_margin="10dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/video_no"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/imageView4"
+                    app:layout_constraintStart_toEndOf="@+id/imageView5"
+                    app:layout_constraintTop_toBottomOf="@+id/btn_cargarArchivo" />
+
+                <ImageView
+                    android:layout_marginStart="20dp"
+                    android:id="@+id/imageView5"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_margin="10dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/pdf_no"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/btn_cargarArchivo"
+                    app:layout_constraintTop_toBottomOf="@+id/btn_cargarArchivo" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

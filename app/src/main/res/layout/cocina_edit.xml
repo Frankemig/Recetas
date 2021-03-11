@@ -106,12 +106,12 @@
 
                     <ImageView
                         android:id="@+id/imagePDFEdit"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="100dp"
+                        android:layout_height="150dp"
                         android:layout_alignParentStart="true"
                         android:layout_alignParentLeft="true"
                         android:layout_margin="10dp"
-                        android:src="@drawable/bucar_pdf"
+                        android:src="@drawable/buscar_pdf"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toStartOf="@+id/btn_cancelarPDFEdit"
                         app:layout_constraintStart_toStartOf="parent"

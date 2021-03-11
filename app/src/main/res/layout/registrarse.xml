@@ -1,23 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-    <androidx.constraintlayout.widget.ConstraintLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools" android:id="@+id/linear1"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_centerInParent="true"
-        android:background="@drawable/fondo_pantalla5">
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/linear1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_centerInParent="true"
+    android:background="@drawable/fondo_pantalla5"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp">
+
     <ImageView
-        android:layout_margin="10dp"
-        android:background="#80000000"
-        android:id="@+id/imageView"
+        android:id="@+id/logo_fucap_registro"
         android:layout_width="150dp"
         android:layout_height="150dp"
+        android:layout_margin="10dp"
+        android:background="#80000000"
+        android:src="@drawable/logo_fucap"
         app:layout_constraintBottom_toTopOf="@+id/edtTelefonoRegistro"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:src="@drawable/logo_fucap" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.rengwuxian.materialedittext.MaterialEditText
         android:id="@+id/edtTelefonoRegistro"
@@ -40,16 +42,16 @@
         app:met_primaryColor="@android:color/white"
         app:met_singleLineEllipsis="true" />
 
-        <TextView
+    <TextView
 
-            android:id="@+id/numero_fallido"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=""
-            android:textColor="@android:color/white"
-            android:textSize="10sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edtTelefonoRegistro" />
+        android:id="@+id/numero_fallido"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="@android:color/white"
+        android:textSize="10sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtTelefonoRegistro" />
 
     <com.rengwuxian.materialedittext.MaterialEditText
         android:id="@+id/edtNombre"
@@ -71,15 +73,15 @@
         app:met_primaryColor="@android:color/white"
         app:met_singleLineEllipsis="true" />
 
-        <TextView
-            android:id="@+id/nombre_fallido"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=""
-            android:textColor="@android:color/white"
-            android:textSize="10sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edtNombre" />
+    <TextView
+        android:id="@+id/nombre_fallido"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="@android:color/white"
+        android:textSize="10sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtNombre" />
 
     <com.rengwuxian.materialedittext.MaterialEditText
         android:id="@+id/edtContraseña"
@@ -101,15 +103,15 @@
         app:met_primaryColor="@android:color/white"
         app:met_singleLineEllipsis="true" />
 
-        <TextView
-            android:id="@+id/contraseña_fallido"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=""
-            android:textColor="@android:color/white"
-            android:textSize="10sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edtContraseña" />
+    <TextView
+        android:id="@+id/contraseña_fallido"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="@android:color/white"
+        android:textSize="10sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtContraseña" />
 
     <com.rengwuxian.materialedittext.MaterialEditText
         android:id="@+id/edtConfirmarContraseña"
@@ -151,32 +153,32 @@
         app:met_primaryColor="@android:color/white"
         app:met_singleLineEllipsis="true" />
 
-        <TextView
-            android:id="@+id/mail_fallido"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=""
-            android:textColor="@android:color/white"
-            android:textSize="10sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edtMail" />
+    <TextView
+        android:id="@+id/mail_fallido"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="@android:color/white"
+        android:textSize="10sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtMail" />
 
 
-        <Button
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp"
-            android:id="@+id/btnRegistro"
-            android:layout_marginStart="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:background="@android:color/black"
-            android:text="REGISTRARSE"
-            android:textColor="@android:color/white"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginLeft="10dp" />
+    <Button
+        android:id="@+id/btnRegistro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@android:color/black"
+        android:text="REGISTRARSE"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

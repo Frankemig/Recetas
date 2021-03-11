@@ -7,6 +7,7 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.navigation.findNavController
 import com.example.recetas.R
 import com.example.recetas.Recetas
 import com.google.android.gms.tasks.Continuation
@@ -44,6 +45,10 @@ class AddCocina : AppCompatActivity() {
         val description=et_preparacionAdd.text
 
         storageReference = FirebaseStorage.getInstance().reference.child("imagenes")
+
+        btn_cargarArchivo.setOnClickListener {
+
+        }
 
         btn_subirImage.setOnClickListener {
             CropImage.startPickImageActivity(this)
