@@ -32,18 +32,10 @@ class MainActivity : AppCompatActivity() {
             return@setOnNavigationItemSelectedListener true
         }
 
-/*        binding.navigationBottom.setOnNavigationItemReselectedListener {
-            when(it.itemId){
-                R.id.menu_cocina -> showSelectedFragment(cocina)
-                R.id.menu_cocteleria -> showSelectedFragment(cocteleria)
-                R.id.menu_postres -> showSelectedFragment(postres)
-            }
-        }*/
-
         setContentView(binding.root)
     }
 
-    private fun showSelectedFragment(fragment: Fragment) {
+    fun showSelectedFragment(fragment: Fragment) {
         if (fragment != null)
 
             supportFragmentManager.beginTransaction().replace(R.id.container, fragment)

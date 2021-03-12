@@ -7,7 +7,7 @@
     <string name="subtitle_activity_main">2021</string>
     <string name="title_activity_add">Nueva Receta</string>
     <string name="title_activity_edit">Datos de la Receta</string>
-    <string name="name_form">Nombre</string>
+    <string name="name_form">Ingrese el nombre de su receta aquí...</string>
     <string name="date_form">Fecha</string>
     <string name="url_form">Subir Imagen</string>
     <string name="preparacion_form">Descripción</string>
@@ -20,8 +20,8 @@
     <string name="ingresar_ingrediente">Ingresar Aquí 1 Ingrediente</string>
     <string name="paso_paso_receta">Ingresar aquí una breve descripción de su receta...</string>
     <string name="modificar_datos">Modificar Datos</string>
-    <string name="olvide_contrasena">Olvidé mi Contraseña</string>
-    <string name="no_registrado">No Estoy Registrado</string>
+    <string name="olvide_contrasena">Olvidé mi contraseña</string>
+    <string name="no_registrado">No estoy registrado</string>
     <string name="cancelar_pdf">Cancelar PDF</string>
     <string name="cargar_archivo">Cargar Archivo</string>
 </resources>

@@ -1,6 +1,7 @@
 package com.example.recetas.cocteleria
 
 import android.app.Activity
+import android.app.AlertDialog
 import android.content.Intent
 import android.graphics.Bitmap
 import android.net.Uri
@@ -8,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.util.Log
+import android.view.LayoutInflater
 import android.widget.Toast
 import com.example.recetas.R
 import com.example.recetas.Recetas
@@ -25,6 +27,8 @@ import com.google.firebase.storage.UploadTask
 import com.squareup.picasso.Picasso
 import com.theartofdev.edmodo.cropper.CropImage
 import com.theartofdev.edmodo.cropper.CropImageView
+import kotlinx.android.synthetic.main.carga_archivo.view.*
+import kotlinx.android.synthetic.main.cocina_add.*
 import kotlinx.android.synthetic.main.cocina_edit.*
 import java.io.ByteArrayOutputStream
 import java.util.*
@@ -60,6 +64,16 @@ class EditCocteleria : AppCompatActivity() {
                 Log.w("TAG", "Failed to read value.", error.toException())
             }
         })
+        btn_editArchivo.setOnClickListener {
+
+            val mDialogo = LayoutInflater.from(this).inflate(R.layout.carga_archivo,null)
+            val mBuilder = AlertDialog.Builder(this).setView(mDialogo).setTitle("Cargar Archivos")
+            val alertDialog = mBuilder.show()
+
+            mDialogo.btn_ok.setOnClickListener {
+                alertDialog.dismiss()
+            }
+        }
 
         btn_saveEdit.setOnClickListener { v ->
 

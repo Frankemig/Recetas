@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#27283a"
+    android:background="@drawable/fondo_app"
     tools:context=".cocina.RecetasCocinaList">
 
     <RelativeLayout
@@ -31,22 +31,6 @@
             android:fontFamily="sans-serif"
             android:textColor="@color/white"
             android:textSize="24sp" />
-
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/textViewReferencia"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_marginStart="24dp"
-            android:layout_marginLeft="24dp"
-            android:layout_marginTop="4dp"
-            android:layout_marginBottom="24dp"
-            android:text="@string/subtitle_activity_main"
-            android:fontFamily="sans-serif"
-            android:textColor="@color/text_light"
-            android:textSize="20sp" />
 
         <ImageView
             android:id="@+id/imageReferencia"

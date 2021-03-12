@@ -29,7 +29,7 @@ class RecetasCocteleriaList : Fragment() {
 
     private val database = Firebase.database
     private lateinit var messagesListener: ValueEventListener
-    private val listRecetas:MutableList<Recetas> = ArrayList()
+    private val listRecetas: MutableList<Recetas> = ArrayList()
     val myRef = database.getReference("Cocteleria")
 
     override fun onCreateView(
@@ -37,7 +37,7 @@ class RecetasCocteleriaList : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-            binding = CocinaListBinding.inflate(inflater)
+        binding = CocinaListBinding.inflate(inflater)
 
         binding.imageReferencia.setImageResource(R.drawable.ic_aperitivos)
         binding.textViewReferencia.setText("Recetas de Coctelería")
@@ -61,13 +61,17 @@ class RecetasCocteleriaList : Fragment() {
                 listRecetas.clear()
                 dataSnapshot.children.forEach { child ->
                     val recetas: Recetas? =
-                            Recetas(child.child("name").getValue<String>(),
-                                    child.child("date").getValue<String>(),
-                                    child.child("description").getValue<String>(),
-                                    child.child("url").getValue<String>(),
-                                child.child("subidoPor").getValue<String>(),
-                                child.child("pdf").getValue<String>(),
-                                    child.key)
+                        Recetas(
+                            child.child("name").getValue<String>(),
+                            child.child("date").getValue<String>(),
+                            child.child("description").getValue<String>(),
+                            child.child("url").getValue<String>(),
+                            child.child("subidoPor").getValue<String>(),
+                            child.child("pdf").getValue<String>(),
+                            child.child("video").getValue<String>(),
+                            child.child("word").getValue<String>(),
+                            child.key
+                        )
                     recetas?.let { listRecetas.add(it) }
                 }
                 recyclerView.adapter = RecetasCocteleriaAdapter(listRecetas)
@@ -108,7 +112,7 @@ class RecetasCocteleriaList : Fragment() {
                 v.context.startActivity(intent)
             }
 
-            holder.itemView.setOnLongClickListener{ v ->
+            holder.itemView.setOnLongClickListener { v ->
                 val intent = Intent(v.context, EditCocteleria::class.java).apply {
                     putExtra("key", recetas.key)
                 }
@@ -127,14 +131,21 @@ class RecetasCocteleriaList : Fragment() {
         }
     }
 
-    private fun deleteSwipe(recyclerView: RecyclerView){
-        val touchHelperCallback: ItemTouchHelper.SimpleCallback = object : ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT or ItemTouchHelper.RIGHT) {
-            override fun onMove(recyclerView: RecyclerView, viewHolder: RecyclerView.ViewHolder, target: RecyclerView.ViewHolder): Boolean {
+    private fun deleteSwipe(recyclerView: RecyclerView) {
+        val touchHelperCallback: ItemTouchHelper.SimpleCallback = object :
+            ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT or ItemTouchHelper.RIGHT) {
+            override fun onMove(
+                recyclerView: RecyclerView,
+                viewHolder: RecyclerView.ViewHolder,
+                target: RecyclerView.ViewHolder
+            ): Boolean {
                 return false
             }
 
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
-                listRecetas.get(viewHolder.adapterPosition).key?.let { myRef.child(it).setValue(null) }
+                listRecetas.get(viewHolder.adapterPosition).key?.let {
+                    myRef.child(it).setValue(null)
+                }
                 listRecetas.removeAt(viewHolder.adapterPosition)
                 recyclerView.adapter?.notifyItemRemoved(viewHolder.adapterPosition)
                 recyclerView.adapter?.notifyDataSetChanged()

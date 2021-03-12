@@ -132,53 +132,16 @@
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_name_receta_full">
-
-        <TextView
-            android:textColor="@color/white"
-            android:id="@+id/tv_addIngredientesCocina"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:background="#27283a"
-            android:gravity="center"
-            android:text="Ingredientes"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toStartOf="@+id/tv_addCantidadCocina"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:textColor="@color/white"
-            android:id="@+id/tv_addCantidadCocina"
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:background="#27283a"
-            android:gravity="center"
-            android:text="Cantidad"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        app:layout_constraintTop_toBottomOf="@+id/tv_name_receta_full"/>
 
     <ListView
-        android:background="#59000FFF"
         android:id="@+id/lv_ingredientes"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:background="#59000FFF"
         app:layout_constraintBottom_toTopOf="@+id/cardView2"
-        app:layout_constraintEnd_toStartOf="@+id/lv_cantidad"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
 
-    <ListView
-        android:background="#59000FFF"
-        android:id="@+id/lv_cantidad"
-        android:layout_width="120dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/cardView2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
 </androidx.constraintlayout.widget.ConstraintLayout>

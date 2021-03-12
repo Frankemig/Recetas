@@ -1,13 +1,17 @@
 package com.example.recetas.cocina
 
 import android.app.Activity
+import android.app.AlertDialog
 import android.content.Intent
 import android.graphics.Bitmap
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.widget.Toast
-import androidx.navigation.findNavController
+import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.FragmentTransaction
+import com.example.recetas.CargarArchivos
+import com.example.recetas.MainActivity
 import com.example.recetas.R
 import com.example.recetas.Recetas
 import com.google.android.gms.tasks.Continuation
@@ -22,6 +26,8 @@ import com.google.firebase.storage.UploadTask
 import com.squareup.picasso.Picasso
 import com.theartofdev.edmodo.cropper.CropImage
 import com.theartofdev.edmodo.cropper.CropImageView
+import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.carga_archivo.view.*
 import kotlinx.android.synthetic.main.cocina_add.*
 import java.io.ByteArrayOutputStream
 import java.util.*
@@ -41,13 +47,20 @@ class AddCocina : AppCompatActivity() {
 
         myRef = database.getReference("Recetas")
 
-        val name=et_nameAdd.text
-        val description=et_preparacionAdd.text
+        val name = et_nameAdd.text
+        val description = et_preparacionAdd.text
 
         storageReference = FirebaseStorage.getInstance().reference.child("imagenes")
 
         btn_cargarArchivo.setOnClickListener {
 
+            val mDialogo = LayoutInflater.from(this).inflate(R.layout.carga_archivo,null)
+            val mBuilder = AlertDialog.Builder(this).setView(mDialogo).setTitle("Cargar Archivos")
+            val alertDialog = mBuilder.show()
+
+            mDialogo.btn_ok.setOnClickListener {
+                alertDialog.dismiss()
+            }
         }
 
         btn_subirImage.setOnClickListener {
@@ -55,11 +68,21 @@ class AddCocina : AppCompatActivity() {
         }
 
         btn_saveAdd.setOnClickListener { v ->
-            val recetas = Recetas(name.toString(), "",description.toString(), downloadUri.toString(),"Franklin Jiménez","")
+            val recetas = Recetas(
+                name.toString(),
+                "",
+                description.toString(),
+                downloadUri.toString(),
+                "Franklin Jiménez",
+                "",
+                "",
+                ""
+            )
             myRef.child(myRef.push().key.toString()).setValue(recetas)
             finish()
         }
     }
+
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == CropImage.PICK_IMAGE_CHOOSER_REQUEST_CODE && resultCode == Activity.RESULT_OK) {

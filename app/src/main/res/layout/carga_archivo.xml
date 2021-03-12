@@ -7,7 +7,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@drawable/fondo_pantalla8"
+    android:background="@drawable/fondo_app"
     android:layout_height="match_parent">
 
 <androidx.constraintlayout.widget.ConstraintLayout
@@ -17,8 +17,8 @@
     <ImageView
         android:id="@+id/imagePDF"
         android:layout_width="100dp"
-        android:layout_height="150dp"
-        android:background="#80000000"
+        android:layout_height="100dp"
+        android:background="#4DFFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/tv_pdf"
         app:layout_constraintEnd_toEndOf="@+id/tv_pdf"
         app:layout_constraintStart_toStartOf="@+id/tv_pdf"
@@ -26,24 +26,12 @@
         app:srcCompat="@drawable/buscar_pdf" />
 
     <ImageView
-        android:id="@+id/imagePDFOk"
-        android:layout_width="100dp"
-        android:layout_height="150dp"
-        android:background="#80000000"
-        app:layout_constraintBottom_toTopOf="@+id/tv_pdf"
-        app:layout_constraintEnd_toEndOf="@+id/tv_pdf"
-        app:layout_constraintStart_toStartOf="@+id/tv_pdf"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/pdf_ok" />
-
-    <ImageView
         android:id="@+id/cancelarPDF"
         android:layout_margin="3dp"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:src="@drawable/ic_cancel"
-        app:layout_constraintEnd_toEndOf="@+id/imagePDFOk"
-        app:layout_constraintTop_toTopOf="@+id/imagePDFOk" />
+        app:layout_constraintEnd_toEndOf="@+id/imagePDF"
+        app:layout_constraintTop_toTopOf="@+id/imagePDF" />
 
     <TextView
         android:gravity="center"
@@ -51,9 +39,10 @@
         android:layout_width="200dp"
         android:layout_height="30dp"
         android:layout_margin="30dp"
+        android:backgroundTint="@color/white"
         android:background="@drawable/ic_btn2"
         android:text="Cargar PDF"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -64,11 +53,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-            <ImageView
-            android:id="@+id/imageVideoOk"
+        <ImageView
+            android:id="@+id/imageVideo"
             android:layout_width="100dp"
-            android:layout_height="150dp"
-            android:background="#80000000"
+            android:layout_height="100dp"
+            android:background="#4DFFFFFF"
             app:layout_constraintBottom_toTopOf="@+id/btn_pdf"
             app:layout_constraintEnd_toEndOf="@+id/btn_pdf"
             app:layout_constraintStart_toStartOf="@+id/btn_pdf"
@@ -76,24 +65,12 @@
             app:srcCompat="@drawable/buscar_video" />
 
         <ImageView
-            android:id="@+id/imageVideo"
-            android:layout_width="100dp"
-            android:layout_height="150dp"
-            android:background="#80000000"
-            app:layout_constraintBottom_toTopOf="@+id/btn_pdf"
-            app:layout_constraintEnd_toEndOf="@+id/btn_pdf"
-            app:layout_constraintStart_toStartOf="@+id/btn_pdf"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/video_ok" />
-
-        <ImageView
             android:id="@+id/cancelarVideo"
             android:layout_margin="3dp"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:src="@drawable/ic_cancel"
-            app:layout_constraintEnd_toEndOf="@+id/imageVideoOk"
-            app:layout_constraintTop_toTopOf="@+id/imageVideoOk" />
+            app:layout_constraintEnd_toEndOf="@+id/imageVideo"
+            app:layout_constraintTop_toTopOf="@+id/imageVideo" />
 
         <TextView
             android:gravity="center"
@@ -102,8 +79,9 @@
             android:layout_height="30dp"
             android:layout_margin="30dp"
             android:background="@drawable/ic_btn2"
-            android:text="Cargar PDF"
-            android:textColor="@color/white"
+            android:text="Cargar Video"
+            android:textColor="@color/black"
+            android:backgroundTint="@color/white"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -115,10 +93,10 @@
         android:layout_height="wrap_content">
 
         <ImageView
-            android:id="@+id/imageDocOk"
+            android:id="@+id/imageDoc"
             android:layout_width="100dp"
-            android:layout_height="150dp"
-            android:background="#80000000"
+            android:layout_height="100dp"
+            android:background="#4DFFFFFF"
             app:layout_constraintBottom_toTopOf="@+id/tv_doc"
             app:layout_constraintEnd_toEndOf="@+id/tv_doc"
             app:layout_constraintStart_toStartOf="@+id/tv_doc"
@@ -126,24 +104,12 @@
             app:srcCompat="@drawable/buscar_word" />
 
         <ImageView
-            android:id="@+id/imageDoc"
-            android:layout_width="100dp"
-            android:layout_height="150dp"
-            android:background="#80000000"
-            app:layout_constraintBottom_toTopOf="@+id/tv_doc"
-            app:layout_constraintEnd_toEndOf="@+id/tv_doc"
-            app:layout_constraintStart_toStartOf="@+id/tv_doc"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/word_ok" />
-
-        <ImageView
             android:id="@+id/cancelarDoc"
             android:layout_margin="3dp"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:src="@drawable/ic_cancel"
-            app:layout_constraintEnd_toEndOf="@+id/imageDocOk"
-            app:layout_constraintTop_toTopOf="@+id/imageDocOk" />
+            app:layout_constraintEnd_toEndOf="@+id/imageDoc"
+            app:layout_constraintTop_toTopOf="@+id/imageDoc" />
 
         <TextView
             android:gravity="center"
@@ -152,12 +118,27 @@
             android:layout_height="30dp"
             android:layout_margin="30dp"
             android:background="@drawable/ic_btn2"
-            android:text="Cargar PDF"
-            android:textColor="@color/white"
+            android:text="Cargar Documento"
+            android:textColor="@color/black"
+            android:backgroundTint="@color/white"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+    <Button
+        android:gravity="center"
+        android:id="@+id/btn_ok"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_margin="30dp"
+        android:background="@drawable/ic_btn2"
+        android:text="OK"
+        android:textColor="@color/black"
+        android:backgroundTint="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </LinearLayout>

@@ -9,7 +9,7 @@ tools:context=".cocina.AddCocina">
 <View
     android:layout_width="match_parent"
     android:layout_height="320dp"
-    android:background="#000000"
+    android:background="@drawable/fondo_app"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent" />
@@ -38,6 +38,7 @@ tools:context=".cocina.AddCocina">
     app:layout_constraintStart_toStartOf="parent">
 
     <ScrollView
+        android:padding="10dp"
         android:background="#27283a"
         android:id="@+id/verticalScroll"
         android:layout_width="match_parent"
@@ -53,24 +54,8 @@ tools:context=".cocina.AddCocina">
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/tv_nameAdd"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"
-                android:layout_margin="10dp"
-                android:text="@string/name_form"
-                android:textColor="@color/white"
-                android:textSize="18sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
             <EditText
+                android:layout_margin="10dp"
                 android:id="@+id/et_nameAdd"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
@@ -90,9 +75,10 @@ tools:context=".cocina.AddCocina">
                 android:paddingBottom="8dp"
                 android:textColor="@color/white"
                 android:textColorHint="@color/white"
+                app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_nameAdd" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/constraintLayout"
@@ -232,7 +218,7 @@ tools:context=".cocina.AddCocina">
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
                 android:layout_margin="10dp"
-                android:text="@string/preparacion"
+                android:text="@string/preparacion_form"
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"

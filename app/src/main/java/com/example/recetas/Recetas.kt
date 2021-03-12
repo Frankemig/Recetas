@@ -10,5 +10,7 @@ data class Recetas(
     val url: String? = null,
     val SubidoPor:String?=null,
     val pdf:String?=null,
+    val video:String?=null,
+    val word:String?=null,
     @Exclude val key: String? = null) {
 }

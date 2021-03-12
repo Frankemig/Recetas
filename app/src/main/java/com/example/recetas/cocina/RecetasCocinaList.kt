@@ -73,6 +73,8 @@ class RecetasCocinaList : Fragment() {
                             child.child("url").getValue<String>(),
                             child.child("subidoPor").getValue<String>(),
                             child.child("pdf").getValue<String>(),
+                            child.child("video").getValue<String>(),
+                            child.child("word").getValue<String>(),
                             child.key
                         )
                     recetas?.let { listRecetas.add(it) }
