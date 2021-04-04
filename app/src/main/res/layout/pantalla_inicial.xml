@@ -18,6 +18,7 @@
 
         <com.rengwuxian.materialedittext.MaterialEditText
             android:id="@+id/edtTelefono_ingresar"
+            android:fontFamily="@font/myfont"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
@@ -39,6 +40,7 @@
 
         <com.rengwuxian.materialedittext.MaterialEditText
             android:id="@+id/edtContraseña"
+            android:fontFamily="@font/myfont"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
@@ -63,6 +65,7 @@
 
     <Button
         android:textStyle="bold"
+        android:fontFamily="@font/myfont"
         android:id="@+id/btnIngreso"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -102,6 +105,8 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <TextView
+            android:fontFamily="@font/myfont"
+            android:textSize="10sp"
             android:id="@+id/olvideContraseña"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -114,6 +119,8 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
+            android:fontFamily="@font/myfont"
+            android:textSize="10sp"
             android:id="@+id/noRegistrado"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

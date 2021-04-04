@@ -23,7 +23,6 @@ import com.google.firebase.storage.UploadTask
 import com.squareup.picasso.Picasso
 import com.theartofdev.edmodo.cropper.CropImage
 import com.theartofdev.edmodo.cropper.CropImageView
-import kotlinx.android.synthetic.main.carga_archivo.view.*
 import kotlinx.android.synthetic.main.cocina_add.*
 import java.io.ByteArrayOutputStream
 import java.util.*
@@ -47,17 +46,6 @@ class AddCocteleria : AppCompatActivity() {
         val description=et_preparacionAdd.text
 
         storageReference = FirebaseStorage.getInstance().reference.child("imagenes")
-
-        btn_cargarArchivo.setOnClickListener {
-
-            val mDialogo = LayoutInflater.from(this).inflate(R.layout.carga_archivo,null)
-            val mBuilder = AlertDialog.Builder(this).setView(mDialogo).setTitle("Cargar Archivos")
-            val alertDialog = mBuilder.show()
-
-            mDialogo.btn_ok.setOnClickListener {
-                alertDialog.dismiss()
-            }
-        }
 
         btn_subirImage.setOnClickListener {
             CropImage.startPickImageActivity(this)

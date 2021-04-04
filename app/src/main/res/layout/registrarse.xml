@@ -22,6 +22,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.rengwuxian.materialedittext.MaterialEditText
+        android:fontFamily="@font/myfont"
         android:id="@+id/edtTelefonoRegistro"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -31,7 +32,7 @@
         android:textStyle="bold"
         android:text=""
         android:textColor="@android:color/white"
-        android:textSize="23sp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/edtNombre"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -55,6 +56,7 @@
 
     <com.rengwuxian.materialedittext.MaterialEditText
         android:id="@+id/edtNombre"
+        android:fontFamily="@font/myfont"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
@@ -63,7 +65,7 @@
         android:text=""
         android:textColor="@android:color/white"
         android:textColorHint="@android:color/black"
-        android:textSize="23sp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/edtContraseña"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -85,6 +87,7 @@
 
     <com.rengwuxian.materialedittext.MaterialEditText
         android:id="@+id/edtContraseña"
+        android:fontFamily="@font/myfont"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
@@ -93,7 +96,7 @@
         android:text=""
         android:textColor="@android:color/white"
         android:textColorHint="@android:color/black"
-        android:textSize="23sp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/edtConfirmarContraseña"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -115,6 +118,7 @@
 
     <com.rengwuxian.materialedittext.MaterialEditText
         android:id="@+id/edtConfirmarContraseña"
+        android:fontFamily="@font/myfont"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
@@ -123,7 +127,7 @@
         android:text=""
         android:textColor="@android:color/white"
         android:textColorHint="@android:color/black"
-        android:textSize="23sp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/edtMail"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -135,6 +139,7 @@
 
     <com.rengwuxian.materialedittext.MaterialEditText
         android:id="@+id/edtMail"
+        android:fontFamily="@font/myfont"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
@@ -143,7 +148,7 @@
         android:text=""
         android:textColor="@android:color/white"
         android:textColorHint="@android:color/black"
-        android:textSize="23sp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/btnRegistro"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -166,6 +171,7 @@
 
     <Button
         android:id="@+id/btnRegistro"
+        android:fontFamily="@font/myfont"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_alignParentBottom="true"

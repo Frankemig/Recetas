@@ -27,7 +27,6 @@ import com.google.firebase.storage.UploadTask
 import com.squareup.picasso.Picasso
 import com.theartofdev.edmodo.cropper.CropImage
 import com.theartofdev.edmodo.cropper.CropImageView
-import kotlinx.android.synthetic.main.carga_archivo.view.*
 import kotlinx.android.synthetic.main.cocina_add.*
 import kotlinx.android.synthetic.main.cocina_edit.*
 import java.io.ByteArrayOutputStream
@@ -64,16 +63,6 @@ class EditPostres : AppCompatActivity() {
                 Log.w("TAG", "Failed to read value.", error.toException())
             }
         })
-        btn_editArchivo.setOnClickListener {
-
-            val mDialogo = LayoutInflater.from(this).inflate(R.layout.carga_archivo,null)
-            val mBuilder = AlertDialog.Builder(this).setView(mDialogo).setTitle("Cargar Archivos")
-            val alertDialog = mBuilder.show()
-
-            mDialogo.btn_ok.setOnClickListener {
-                alertDialog.dismiss()
-            }
-        }
 
         btn_saveEdit.setOnClickListener { v ->
 

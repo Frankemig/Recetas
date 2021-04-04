@@ -18,6 +18,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="com.example.recetas.panaderia.AddPanaderia"
+            android:theme="@style/Theme.FormActivity">
+        </activity>
+        <activity android:name="com.example.recetas.panaderia.DetailPanaderia"
+            android:theme="@style/Theme.FormActivity">
+        </activity>
+        <activity android:name="com.example.recetas.panaderia.EditPanaderia"
+            android:theme="@style/Theme.FormActivity">
+        </activity>
         <activity
             android:name="com.example.recetas.cocina.EditCocina"
             android:theme="@style/Theme.FormActivity" />

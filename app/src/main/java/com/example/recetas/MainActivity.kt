@@ -8,6 +8,7 @@ import androidx.fragment.app.FragmentTransaction
 import com.example.recetas.cocina.RecetasCocinaList
 import com.example.recetas.cocteleria.RecetasCocteleriaList
 import com.example.recetas.databinding.ActivityMainBinding
+import com.example.recetas.panaderia.RecetasPanaderiaList
 import com.example.recetas.postres.RecetasPostresList
 
 class MainActivity : AppCompatActivity() {
@@ -19,6 +20,7 @@ companion object{
     val cocina = RecetasCocinaList()
     val cocteleria = RecetasCocteleriaList()
     val postres = RecetasPostresList()
+    val panaderia = RecetasPanaderiaList()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,6 +33,8 @@ companion object{
                 showSelectedFragment(postres)
             } else if (it.itemId == R.id.menu_cocteleria) {
                 showSelectedFragment(cocteleria)
+            } else if (it.itemId == R.id.menu_panaderia) {
+                showSelectedFragment(panaderia)
             }
             return@setOnNavigationItemSelectedListener true
         }
