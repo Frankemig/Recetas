@@ -12,7 +12,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.firebasekotlincrud"
-        minSdkVersion 16
+        minSdkVersion 21
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
@@ -44,19 +44,19 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'androidx.core:core-ktx:1.3.2'
     implementation 'androidx.appcompat:appcompat:1.2.0'
-    implementation 'com.google.android.material:material:1.2.1'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.2'
+    implementation 'com.google.android.material:material:1.3.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
     // Import the BoM for the Firebase platform
     implementation platform('com.google.firebase:firebase-bom:25.12.0')
     // Declare the dependency for the Realtime Database library
     // When using the BoM, you don't specify versions in Firebase library dependencies
-    implementation 'com.google.firebase:firebase-database-ktx:19.5.0'
+    implementation 'com.google.firebase:firebase-database-ktx:19.7.0'
     //Glide
     implementation 'com.github.bumptech.glide:glide:4.11.0'
-    implementation 'com.google.firebase:firebase-database:19.6.0'
-    implementation 'com.google.firebase:firebase-storage:19.2.1'
+    implementation 'com.google.firebase:firebase-database:19.7.0'
+    implementation 'com.google.firebase:firebase-storage:19.2.2'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
-    testImplementation 'junit:junit:4.13.1'
+    testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
@@ -67,8 +67,8 @@ dependencies {
     //Compresor de Imagen
     implementation 'id.zelory:compressor:3.0.0'
     // viewModels(), ContainerView
-    implementation 'androidx.fragment:fragment-ktx:1.3.0'
-    implementation "androidx.activity:activity-ktx:1.2.0"
+    implementation 'androidx.fragment:fragment-ktx:1.3.2'
+    implementation "androidx.activity:activity-ktx:1.2.2"
 
 //NAVIGATION
     def nav_version = "2.3.0"
@@ -76,5 +76,8 @@ dependencies {
 // Kotlin
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
     implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+
+    //PDF Viewer
+    implementation 'com.github.barteksc:android-pdf-viewer:2.8.2'
 
 }

@@ -21,6 +21,8 @@ lateinit var binding: PantallaInicialBinding
         savedInstanceState: Bundle?
     ): View? {
         binding = PantallaInicialBinding.inflate(inflater)
+        MainActivity.binding.navigationBottom.isVisible = false
+
         binding.logoFucap.animate().apply {
             duration=3000
             alpha(.5f)
@@ -41,6 +43,7 @@ lateinit var binding: PantallaInicialBinding
 
 binding.btnIngreso.setOnClickListener {
     findNavController().navigate(R.id.action_pantallaInicial_to_recetasCocinaList)
+    MainActivity.binding.navigationBottom.isVisible = true
 }
         binding.noRegistrado.setOnClickListener {
             findNavController().navigate(R.id.action_pantallaInicial_to_registrarse)
@@ -48,4 +51,5 @@ binding.btnIngreso.setOnClickListener {
 
         return binding.root
     }
+
 }

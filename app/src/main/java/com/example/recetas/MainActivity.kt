@@ -2,6 +2,7 @@ package com.example.recetas
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import com.example.recetas.cocina.RecetasCocinaList
@@ -10,8 +11,10 @@ import com.example.recetas.databinding.ActivityMainBinding
 import com.example.recetas.postres.RecetasPostresList
 
 class MainActivity : AppCompatActivity() {
+companion object{
+    lateinit var binding: ActivityMainBinding
 
-    private lateinit var binding: ActivityMainBinding
+}
 
     val cocina = RecetasCocinaList()
     val cocteleria = RecetasCocteleriaList()
