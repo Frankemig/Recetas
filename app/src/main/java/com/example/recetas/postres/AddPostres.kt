@@ -40,7 +40,7 @@ class AddPostres : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.cocina_add)
 
-        myRef = database.getReference("Postres")
+        myRef = database.getReference("Reposteria")
 
         val name=et_nameAdd.text
         val description=et_preparacionAdd.text
@@ -85,7 +85,7 @@ class AddPostres : AppCompatActivity() {
                 val thum_byte = byteArrayOutputStream.toByteArray()
 
                 val filePath: StorageReference =
-                    storageReference.child("Postres").child(resultUri.lastPathSegment!!)
+                    storageReference.child("Reposteria").child(resultUri.lastPathSegment!!)
                 val uploadTask: UploadTask = filePath.putBytes(thum_byte)
                 val uriTask: Task<Uri> =
                     uploadTask.continueWithTask(Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {

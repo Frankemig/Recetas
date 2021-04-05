@@ -6,25 +6,28 @@ android:layout_width="match_parent"
 android:layout_height="match_parent"
 tools:context=".cocina.AddCocina">
 
-<View
-    android:layout_width="match_parent"
-    android:layout_height="320dp"
-    android:background="@drawable/fondo_app"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent" />
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="320dp"
+        android:background="@drawable/fondo_app"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-<TextView
-    android:id="@+id/titleAddCocina"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:gravity="center"
-    android:text="@string/title_activity_add"
-    android:textColor="@color/white"
-    android:textSize="32sp"
-    app:layout_constraintBottom_toTopOf="@+id/cardView"
-    app:layout_constraintTop_toTopOf="parent"
-    tools:layout_editor_absoluteX="16dp" />
+    <TextView
+        android:fontFamily="@font/myfont"
+        android:id="@+id/titleAddCocina"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:gravity="center"
+        android:text="@string/title_activity_add"
+        android:textColor="@color/white"
+        android:textSize="32sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 <androidx.cardview.widget.CardView
     android:id="@+id/cardView"
@@ -55,6 +58,7 @@ tools:context=".cocina.AddCocina">
             android:layout_height="match_parent">
 
             <EditText
+                android:fontFamily="@font/myfont"
                 android:layout_margin="10dp"
                 android:id="@+id/et_nameAdd"
                 android:layout_width="match_parent"
@@ -89,56 +93,58 @@ tools:context=".cocina.AddCocina">
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/et_nameAdd">
 
-                <Button
-                    android:id="@+id/btn_cargarArchivo"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
+                <ImageView
+                    android:id="@+id/imageDocxAdd"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
                     android:layout_margin="10dp"
-                    android:background="@drawable/ic_btn2"
-                    android:gravity="center"
-                    android:text="@string/cargar_archivo"
-                    android:textColor="@color/white"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
+                    android:layout_marginEnd="20dp"
+                    android:src="@drawable/word_no2"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/cancelarDocx"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    app:layout_constraintEnd_toEndOf="@+id/imageDocxAdd"
+                    app:layout_constraintTop_toTopOf="@+id/imageDocxAdd" />
+
+                <ImageView
+                    android:id="@+id/imageVideoAdd"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_margin="10dp"
+                    android:src="@drawable/video_no2"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/imageDocxAdd"
+                    app:layout_constraintStart_toEndOf="@+id/imagePDFAdd"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/cancelarVideo"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    app:layout_constraintEnd_toEndOf="@+id/imageVideoAdd"
+                    app:layout_constraintTop_toTopOf="@+id/imageVideoAdd" />
+
+                <ImageView
+                    android:id="@+id/imagePDFAdd"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_margin="10dp"
+                    android:src="@drawable/pdf_no2"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
-                    android:layout_marginEnd="20dp"
-                    android:id="@+id/imageView4"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_margin="10dp"
-                    android:layout_marginTop="10dp"
-                    android:src="@drawable/word_no"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/btn_cargarArchivo" />
-
-                <ImageView
-                    android:id="@+id/imageView3"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_margin="10dp"
-                    android:layout_marginTop="10dp"
-                    android:src="@drawable/video_no"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/imageView4"
-                    app:layout_constraintStart_toEndOf="@+id/imageView5"
-                    app:layout_constraintTop_toBottomOf="@+id/btn_cargarArchivo" />
-
-                <ImageView
-                    android:layout_marginStart="20dp"
-                    android:id="@+id/imageView5"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_margin="10dp"
-                    android:layout_marginTop="10dp"
-                    android:src="@drawable/pdf_no"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="@+id/btn_cargarArchivo"
-                    app:layout_constraintTop_toBottomOf="@+id/btn_cargarArchivo" />
+                    android:id="@+id/cancelarPDF"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    app:layout_constraintEnd_toEndOf="@+id/imagePDFAdd"
+                    app:layout_constraintTop_toTopOf="@+id/imagePDFAdd" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -163,6 +169,7 @@ tools:context=".cocina.AddCocina">
                 app:layout_constraintTop_toBottomOf="@+id/btn_subirImage" />
 
             <Button
+                android:fontFamily="@font/myfont"
                 android:id="@+id/btn_subirImage"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
@@ -180,6 +187,7 @@ tools:context=".cocina.AddCocina">
                 app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
 
             <EditText
+                android:fontFamily="@font/myfont"
                 android:id="@+id/et_preparacionAdd"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
@@ -209,7 +217,7 @@ tools:context=".cocina.AddCocina">
                 app:layout_constraintTop_toBottomOf="@+id/tv_preparacionAdd" />
 
             <TextView
-
+                android:fontFamily="@font/myfont"
                 android:id="@+id/tv_preparacionAdd"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -226,6 +234,7 @@ tools:context=".cocina.AddCocina">
                 app:layout_constraintTop_toBottomOf="@+id/imageAdd" />
 
             <Button
+                android:fontFamily="@font/myfont"
                 android:id="@+id/btn_saveAdd"
                 android:layout_width="240dp"
                 android:layout_height="56dp"

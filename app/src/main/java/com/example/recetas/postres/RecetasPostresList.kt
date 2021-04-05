@@ -30,7 +30,7 @@ class RecetasPostresList : Fragment() {
     private val database = Firebase.database
     private lateinit var messagesListener: ValueEventListener
     private val listRecetas: MutableList<Recetas> = ArrayList()
-    val myRef = database.getReference("Postres")
+    val myRef = database.getReference("Reposteria")
 
     override fun onCreateView(
         inflater: LayoutInflater,

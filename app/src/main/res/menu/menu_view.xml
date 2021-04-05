@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<item
+    android:title="PDF"
+    android:id="@+id/menu_pdf"/>
+    <item
+        android:title="DOCX"
+        android:id="@+id/menu_docx"/>
+    <item
+        android:title="Video"
+        android:id="@+id/menu_video"/>
+</menu>

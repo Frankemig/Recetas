@@ -87,56 +87,37 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/et_nameEdit">
 
-                    <Button
-                        android:id="@+id/btn_editArchivo"
-                        android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:layout_margin="10dp"
-                        android:background="@drawable/ic_btn2"
-                        android:gravity="center"
-                        android:text="@string/cargar_archivo"
-                        android:textColor="@color/white"
-                        android:textSize="16sp"
-                        android:textStyle="bold"
+                    <ImageView
+                        android:id="@+id/imageDocxEdit"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_margin="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:src="@drawable/word_no2"
+                        app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <ImageView
-                        android:layout_marginEnd="20dp"
-                        android:id="@+id/imageView4"
+                        android:id="@+id/imageVideoEdit"
                         android:layout_width="100dp"
                         android:layout_height="100dp"
-                        android:layout_margin="10dp"
-                        android:layout_marginTop="10dp"
-                        android:src="@drawable/word_no"
+                        android:layout_margin="20dp"
+                        android:src="@drawable/video_no2"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/btn_editArchivo" />
+                        app:layout_constraintEnd_toStartOf="@+id/imageDocxEdit"
+                        app:layout_constraintStart_toEndOf="@+id/imagePDFEdit"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <ImageView
-                        android:id="@+id/imageView3"
+                        android:id="@+id/imagePDFEdit"
                         android:layout_width="100dp"
                         android:layout_height="100dp"
-                        android:layout_margin="10dp"
-                        android:layout_marginTop="10dp"
-                        android:src="@drawable/video_no"
+                        android:layout_margin="20dp"
+                        android:src="@drawable/pdf_no2"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toStartOf="@+id/imageView4"
-                        app:layout_constraintStart_toEndOf="@+id/imageView5"
-                        app:layout_constraintTop_toBottomOf="@+id/btn_editArchivo" />
-
-                    <ImageView
-                        android:layout_marginStart="20dp"
-                        android:id="@+id/imageView5"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:layout_margin="10dp"
-                        android:layout_marginTop="10dp"
-                        android:src="@drawable/pdf_no"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="@+id/btn_editArchivo"
-                        app:layout_constraintTop_toBottomOf="@+id/btn_editArchivo" />
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 

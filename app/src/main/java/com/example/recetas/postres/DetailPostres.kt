@@ -20,7 +20,7 @@ class DetailPostres : AppCompatActivity() {
 
         val key = intent.getStringExtra("key")
         val database = Firebase.database
-        @Suppress("NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS") val myRef = database.getReference("Postres").child(key!!)
+        @Suppress("NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS") val myRef = database.getReference("Reposteria").child(key!!)
 
         myRef.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
@@ -45,9 +45,9 @@ class DetailPostres : AppCompatActivity() {
         Picasso.get().load(url).placeholder(R.drawable.ic_idea_comodin).centerCrop().resize(480,640)
             .into(posterImgeView)
 
-        Picasso.get().load(url).placeholder(R.drawable.ic_idea_comodin).centerCrop().resize(480,640)
+   /*     Picasso.get().load(url).placeholder(R.drawable.ic_idea_comodin).centerCrop().resize(480,640)
             .into(backgroundImageView)
-
+*/
 
     }
 }

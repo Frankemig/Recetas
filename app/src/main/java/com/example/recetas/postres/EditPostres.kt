@@ -46,7 +46,7 @@ class EditPostres : AppCompatActivity() {
         val database = Firebase.database
         storageReference = FirebaseStorage.getInstance().reference.child("imagenes")
 
-        @Suppress("NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS") val myRef = database.getReference("Postres").child(key!!)
+        @Suppress("NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS") val myRef = database.getReference("Reposteria").child(key!!)
 
         myRef.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
@@ -102,7 +102,7 @@ class EditPostres : AppCompatActivity() {
                 val thum_byte = byteArrayOutputStream.toByteArray()
 
                 val filePath: StorageReference =
-                    storageReference.child("Postres").child(resultUri.lastPathSegment!!)
+                    storageReference.child("Reposteria").child(resultUri.lastPathSegment!!)
                 val uploadTask: UploadTask = filePath.putBytes(thum_byte)
                 val uriTask: Task<Uri> =
                     uploadTask.continueWithTask(Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {

@@ -45,8 +45,10 @@ class DetailCocina : AppCompatActivity() {
         Picasso.get().load(url).placeholder(R.drawable.ic_idea_comodin).centerCrop().resize(480,640)
             .into(posterImgeView)
 
+/*
         Picasso.get().load(url).placeholder(R.drawable.ic_idea_comodin).centerCrop().resize(480,640)
             .into(backgroundImageView)
+*/
 
 
     }
