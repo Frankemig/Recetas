@@ -5,17 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_centerInParent="true"
-    android:background="@drawable/fondo_pantalla5"
+    android:background="@drawable/fondo_app3"
     android:paddingLeft="20dp"
     android:paddingRight="20dp">
 
     <ImageView
         android:id="@+id/logo_fucap_registro"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="330dp"
+        android:layout_height="230dp"
         android:layout_margin="10dp"
-        android:background="#80000000"
-        android:src="@drawable/logo_fucap"
+        android:background="#80FFFFFF"
+        android:src="@drawable/logo_app_recetas"
         app:layout_constraintBottom_toTopOf="@+id/edtTelefonoRegistro"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

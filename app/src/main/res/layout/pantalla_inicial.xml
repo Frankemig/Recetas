@@ -5,23 +5,24 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="20dp"
-        android:background="@drawable/portada_app"
+        android:background="@drawable/portada_app2"
         xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="285dp"
+        android:layout_height="200dp"
         app:layout_constraintBottom_toTopOf="@+id/btnIngreso"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logo_fucap">
+        app:layout_constraintTop_toBottomOf="@+id/logo_fucap"
+        app:layout_constraintVertical_bias="0.85">
 
         <com.rengwuxian.materialedittext.MaterialEditText
             android:id="@+id/edtTelefono_ingresar"
-            android:fontFamily="@font/myfont"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
+            android:fontFamily="@font/myfont"
             android:hint="Ingresar N° Teléfono"
             android:inputType="phone"
             android:text="953827227"
@@ -40,10 +41,10 @@
 
         <com.rengwuxian.materialedittext.MaterialEditText
             android:id="@+id/edtContraseña"
-            android:fontFamily="@font/myfont"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
+            android:fontFamily="@font/myfont"
             android:hint="Ingresar Contraseña"
             android:inputType="textPassword"
             android:text="SulCanMar1982"
@@ -81,16 +82,15 @@
 
     <ImageView
         android:id="@+id/logo_fucap"
-        android:layout_width="300dp"
-        android:layout_height="220dp"
-        android:src="@drawable/logo_fucap"
-        android:tint="@color/black"
+        android:layout_width="330dp"
+        android:layout_height="230dp"
+        android:src="@drawable/logo_app_recetas"
+        android:background="#80FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.345"
+        app:layout_constraintVertical_bias="0.1"
         app:tint="@color/black"
         tools:ignore="UseAppTint" />
 
